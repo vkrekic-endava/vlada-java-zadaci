@@ -29,13 +29,15 @@ class Pogadjanje {
 
         while(true) {
 
-            int pogodi = randomNumber.nextInt(50);
+            //Generise random broj izmedju 1 i 50
+            int pogodi = randomNumber.nextInt(50)+1;
 
-            System.out.print("Upisi broj izmedju 0 i 50: ");
+            System.out.print("Upisi broj izmedju 1 i 50: ");
+            //Ponavlja unos sve dok ne bude unet ceo broj izmedju 1 i 50
             try {
                 broj = scanner.nextInt();
-                if(broj > 50 || broj < 0){
-                    System.out.println("Niste uneli broj izmedju 0 i 50");
+                if(broj > 50 || broj < 1){
+                    System.out.println("Niste uneli broj izmedju 1 i 50");
                     continue;
                 }
             }catch (InputMismatchException e){
@@ -44,6 +46,7 @@ class Pogadjanje {
                 continue;
             }
 
+            //Proverava rezultat i pruza opcije korisniku u skladu sa rezultatom
             int rezultat = provera(pogodi, broj);
 
             if(rezultat==0){
@@ -62,6 +65,7 @@ class Pogadjanje {
 
     }
 
+    //Proverava preciznost
     private static int provera(int rndNumber, int broj){
         if(rndNumber==broj)
             return 0;
@@ -70,6 +74,8 @@ class Pogadjanje {
         return 2;
     }
 
+    //Pita korisnika da li zeli da ponovo igra
+    //"d" ga vraca u igru, ostale opcije prekidaju program
     private static boolean ponovo(){
         System.out.println("Zelite li da igrate ponovo (d/n)");
         String izbor = scanner.next();

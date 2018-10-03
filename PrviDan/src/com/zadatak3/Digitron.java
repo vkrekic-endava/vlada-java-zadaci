@@ -27,22 +27,27 @@ class Digitron {
 
         do {
 
-            System.out.print("\nUnesite prvi broj: ");
+            //Unosi brojeve sve dok ne unese oba cela broja
+            System.out.print("\nUnesite prvi ceo broj: ");
             try {
                 broj1 = scanner.nextLong();
             }catch (InputMismatchException e){
-                System.out.println("Niste uneli broj!");
+                System.out.println("Niste uneli ceo broj!");
+                //nextLine proguta Enter
                 scanner.nextLine();
                 continue;
             }
-            System.out.print("Unesite drugi broj: ");
+            System.out.print("Unesite drugi ceo broj: ");
             try {
                 broj2 = scanner.nextLong();
             }catch (InputMismatchException e){
-                System.out.println("Niste uneli broj!");
+                System.out.println("Niste uneli ceo broj!");
+                //nextLine proguta Enter
                 scanner.nextLine();
                 continue;
             }
+
+            //Biranje operacije
             System.out.println("Izaberite operaciju\n‘s’ – sabiranje, ‘o’ – oduzimanje, ‘m’ – množenje, ‘d’ – deljenje");
             String izbor = scanner.next();
 
@@ -91,6 +96,8 @@ class Digitron {
             return (double) br1/br2;
     }
 
+    //Pita korisnika da li zeli ponovo da racuna
+    //Ako izabere "d" racuna ponovo, svi ostali izbori su Ne
     private static boolean ponovo(){
         System.out.println("\nZelite li ponovo da racunate (d/n)");
         String izbor = scanner.next();
