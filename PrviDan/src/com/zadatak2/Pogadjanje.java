@@ -34,7 +34,7 @@ class Pogadjanje {
             System.out.print("Upisi broj izmedju 0 i 50: ");
             try {
                 broj = scanner.nextInt();
-                if(broj > 50 || broj < 0){
+                if(broj > 50 || broj <0){
                     System.out.println("Niste uneli broj izmedju 0 i 50");
                     continue;
                 }
